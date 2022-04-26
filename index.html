@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>WeatherApp</title>
+</head>
+
+<body>
+    <!-- Main heading with search bar -->
+    <header>
+        <header class="p-3 bg-dark text-white">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+                    <ul class="nav col-12 ms-auto col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                        <li><a href="#about" class="nav-link px-2 text-white">About</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- current weather of popular cities -->
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <div class="nav navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- I dont know what this is for -->
+
+    <div class="container">
+        <header class="d-flex justify-content-center py-3">
+            <div class="params-select">
+                <div class="mb-5 ms-auto">
+                    <label for="params">Search by: </label>
+                    <select id='params' class="form-select form-select-sm serext" aria-label="Default select example">
+                        <option value="1">City Name</option>
+                        <option value="2" selected>Location Coordinates</option>
+                    </select>
+
+                </div>
+                <form action="" method="get" class="loc-form">
+                    <div class="row mb-3 ">
+                        <div class="col ">
+                            <input type="text" name="long" class="form-control" placeholder="Longitude"
+                                aria-label="Longitude">
+                            <small class="lon-warning"></small>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="lat" class="form-control" placeholder="Latitude"
+                                aria-label="Latitude">
+                            <small class="lat-warning"></small>
+                        </div>
+                    </div>
+                    <button class="btn-primary search-btn" type="submit"> Search </button>
+
+                </form>
+
+                <form action="" method="get" class="city-form mt-3">
+                    <div class=" col mb-3">
+                        <input type=" text" name="cityName" class="form-control" placeholder="City"
+                            aria-label="Latitude">
+                        <small class="city-warning"></small>
+                    </div>
+                    <button class="btn-primary search-btn" type="submit"> Search </button>
+
+                </form>
+
+
+            </div>
+
+
+        </header>
+    </div>
+
+
+
+    <!-- weather  -->
+    <main>
+        <div class="weather-container">
+
+            <div class="weather-periods">
+                <!-- overview current weather with image  -->
+                <div class="current-conditions">
+                    <div class="header">
+                        <h3><span class="city">
+                                City
+                            </span> <span class="city-code"> City Code </span>As of <span class="time-fetched">Time
+                                Fetched
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="grr">
+                        <div class="">
+                            <p class="temp">
+                                <h1>32°</h1>
+                            </p>
+                            <p clas="main-desciption">Cloudy</p>
+                            <p class="min-max-temp">Day <span class="day-temp">32</span> •
+                                Night <span class="night-temp">34</span></p>
+                        </div>
+                        <div class="weather-img-box">
+                            <img src="" alt="weather image here" class="weather-img">
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- forecast for the day -->
+                <div class="today-forecast">
+                    <div>
+                        <h2>Today's forecast for <span class="city">City, </span><span class="city-code">City Code
+                            </span>
+                        </h2>
+                    </div>
+
+                    <div class="brr">
+                        <div>
+                            <div>
+                                <p>Morning</p>
+                                <p>
+                                    <h2 class="temp"> 32°</h2>
+                                </p>
+                                <img src="" alt="weather-image here" class="weather-img">
+                                <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>
+                                <p>Afternoon</p>
+                                <p>
+                                    <h2 class="temp"> 32°</h2>
+                                </p>
+                                <img src="" alt="weather-image here" class="weather-img">
+                                <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <div>
+                                <p>Evening</p>
+                                <p>
+                                    <h2 class="temp"> 3°2</h2>
+                                </p>
+                                <img src="" alt="weather-image here" class="weather-img">
+                                <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>
+                                <p>Overnight</p>
+                                <p>
+                                    <h2 class="temp"> 32°</h2>
+                                </p>
+                                <img src="" alt="weather-image here" class="weather-img">
+                                <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button class="btn-primary " disabled> Next Hours</button>
+                </div>
+
+                <!-- other elements -->
+                <div class="current-weather">
+                    <div>
+                        <header>
+                            <h3>Weather Today in <span class="city">City, </span><span class="city-code">City Code
+                                </span> </h3>
+                        </header>
+                    </div>
+
+                    <div class="sprr">
+                        <div>
+                            <h1 class="feels-like">32°</h1>
+                            <p class="">Feels like</p>
+                        </div>
+                        <div>
+                            <img src="" alt="image-here">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <svg></svg>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div>
+                            <svg></svg>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+                        <div>
+                            <svg></svg>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+                        <div>
+                            <svg></svg>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+                        <div>
+                            <svg></svg>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+                        <div>
+                            <svg></svg>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+                        <div>
+                            <svg></svg>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+                        <div>
+                            <svg></svg>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <!-- forecast per hour -->
+                <div class="hourly-forecast">
+                    <div class="">
+                        <div>
+                            <h2>Hourly Forecast</h2>
+                        </div>
+
+                        <div class="brr">
+                            <div>
+                                <div>
+                                    <p>14:00</p>
+                                    <p>
+                                        <h2 class="temp"> 32°</h2>
+                                    </p>
+                                    <img src="" alt="weather-image here" class="weather-img">
+                                    <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <p>15:00</p>
+                                    <p>
+                                        <h2 class="temp"> 32°</h2>
+                                    </p>
+                                    <img src="" alt="weather-image here" class="weather-img">
+                                    <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <div>
+                                    <p>16:00</p>
+                                    <p>
+                                        <h2 class="temp"> 3°2</h2>
+                                    </p>
+                                    <img src="" alt="weather-image here" class="weather-img">
+                                    <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <p>17:00</p>
+                                    <p>
+                                        <h2 class="temp"> 32°</h2>
+                                    </p>
+                                    <img src="" alt="weather-image here" class="weather-img">
+                                    <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <button class="btn-primary " disabled> Next Hours</button>
+                    </div>
+
+                </div>
+
+                <!-- forecast for subsequent days -->
+                <div class="daily-forecast">
+                    <div class="">
+                        <div>
+                            <h2>Today's forecast for <span class="city">City, </span><span class="city-code">City Code
+                                </span>
+                            </h2>
+                        </div>
+
+                        <div class="brr">
+                            <div>
+                                <div>
+                                    <p>Morning</p>
+                                    <p>
+                                        <h2 class="temp"> 32°</h2>
+                                    </p>
+                                    <img src="" alt="weather-image here" class="weather-img">
+                                    <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <p>Afternoon</p>
+                                    <p>
+                                        <h2 class="temp"> 32°</h2>
+                                    </p>
+                                    <img src="" alt="weather-image here" class="weather-img">
+                                    <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <div>
+                                    <p>Evening</p>
+                                    <p>
+                                        <h2 class="temp"> 3°2</h2>
+                                    </p>
+                                    <img src="" alt="weather-image here" class="weather-img">
+                                    <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <p>Overnight</p>
+                                    <p>
+                                        <h2 class="temp"> 32°</h2>
+                                    </p>
+                                    <img src="" alt="weather-image here" class="weather-img">
+                                    <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <button class="btn-primary " disabled> Next Hours</button>
+                    </div>
+
+                </div>
+
+
+                <!-- radar with map -->
+                <div class="radar-mapped">
+
+                </div>
+                <!-- radar-end -->
+
+            </div>
+
+        </div>
+        <!-- sidebar with weather -->
+        <div class="sbar">
+            <aside>
+                <div class="side-weather">
+                    <div class="air-quality">
+                        <div class="weather-periods">
+                            <!-- overview current weather with image  -->
+                            <div class="current-conditions">
+                                <div class="header">
+                                    <p><span class="city">
+                                            <h3>City</h3>
+                                        </span> <span class="city-code"> City Code</span>As of <span
+                                            class="time-fetched">Time
+                                            Fetched</span></p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- forecat for the day -->
+                        <div class="today-forecast">
+                            <div>
+                                <h2>Today's forecast for <span class="city">City, </span><span class="city-code">City
+                                        Code
+                                    </span>
+                                </h2>
+                            </div>
+
+                            <div class="brr">
+                                <div>
+                                    <div>
+                                        <p>Morning</p>
+                                        <p>
+                                            <h2 class="temp"> 32°</h2>
+                                        </p>
+                                        <img src="" alt="weather-image here" class="weather-img">
+                                        <p><i class="fa fas-temp"></i> <span class="rain-chance"> 2%</span> </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+
+
+    </main>
+
+
+
+
+    <footer id="about">
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

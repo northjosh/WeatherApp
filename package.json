@@ -1,0 +1,18 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "A location based weather app with custom search.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joshua Mensah",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "type": "module"
+  },
+
+    
+  
+}

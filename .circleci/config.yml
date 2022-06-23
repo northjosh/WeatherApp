@@ -20,9 +20,9 @@ jobs:
   print-hello:
     docker:
       - image: circleci/node:13.8.0
-    
+
     steps:
-      -checkout
+      - checkout
       - run:
           name: "Print Hello"
           command: "echo Hello"
@@ -30,20 +30,20 @@ jobs:
   print-world:
     docker:
       - image: circleci/node:13.8.0
-    
+
     steps:
-      -checkout
+      - checkout
       - run:
           name: "Print World"
           command: "echo World"
-  
+
   print-env-var:
     docker:
       -image: circleci/node:13.8.0
-    
+
     steps:
-      -checkout
-      -run:
+      - checkout
+      - run:
         name: "Print Env Variable"
         command: echo $env_var_1
 

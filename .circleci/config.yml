@@ -17,6 +17,35 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+  print-hello:
+    docker:
+      - image: circleci/node:13.8.0
+    
+    steps:
+      -checkout
+      - run:
+          name: "Print Hello"
+          command: "echo Hello"
+
+  print-world:
+    docker:
+      - image: circleci/node:13.8.0
+    
+    steps:
+      -checkout
+      - run:
+          name: "Print World"
+          command: "echo World"
+  
+  print-env-var:
+    docker:
+      -image: circleci/node:13.8.0
+    
+    steps:
+      -checkout
+      -run:
+        name: "Print Env Variable"
+        command: echo $env_var_1
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -24,3 +53,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - print-hello
+      - print-world:
+          requires: [print-hello]

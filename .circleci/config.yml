@@ -59,7 +59,7 @@ jobs:
           command: echo "Hello World" > output.txt
       - persist_to_workspace:
           root: .
-          paths: .txt
+          paths: ./*
 
   print_output_file:
     docker:

@@ -47,11 +47,11 @@ jobs:
           name: "Print Env Variable"
           command: |
             echo $env_var_1
-  
+
   save_hello_world_outputs:
-    docker: 
+    docker:
       - image: cimg/base:2020.01
-    
+
     steps:
       - checkout
       - run:
@@ -59,7 +59,7 @@ jobs:
           command: echo "Hello World" > output.txt
       - persist_to_workspace:
           root: .
-          paths: *.txt
+          paths: .txt
 
   print_output_file:
     docker:
@@ -69,12 +69,8 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: 
+      - run:
           command: cat output.txt
-
-
-
-
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

@@ -88,7 +88,10 @@ jobs:
 
     steps:
       - print_pipeline_id:
-          to: << pipeline.id >>
+          to: << pipeline.id2 >>
+      - run:
+        command: echo "Print Failed"
+        when: on_fail
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -109,4 +112,8 @@ workflows:
       - save_hello_world_outputs
       - print_output_file:
           requires: [save_hello_world_outputs]
+      - print_id
+
+  print_pipe_id:
+    jobs:
       - print_id

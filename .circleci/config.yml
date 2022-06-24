@@ -88,7 +88,8 @@ jobs:
 
     steps:
       - print_pipeline_id:
-          to: << pipeline.id2 >>
+          to: << pipeline.id >>
+
       - run:
         command: echo "Print Failed"
         when: on_fail

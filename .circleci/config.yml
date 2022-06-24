@@ -90,10 +90,16 @@ jobs:
       - print_pipeline_id:
           to: << pipeline.id2 >>
 
-      - run:
-        command: echo "Print Failed"
-        when: on_fail
+  new_job:
+    docker:
+      - image: circleci/node:13.8.0
 
+    steps:
+      - run:
+          command: exit 1
+      - run:
+          command: echo "Test Failed"
+          when: on_fail
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -117,3 +123,7 @@ workflows:
   print_pipe_id:
     jobs:
       - print_id
+
+  new_workflow:
+    jobs:
+      - new_job

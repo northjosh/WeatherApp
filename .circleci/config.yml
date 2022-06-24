@@ -109,4 +109,7 @@ workflows:
       - save_hello_world_outputs
       - print_output_file:
           requires: [save_hello_world_outputs]
+
+  print_pipe_id:
+    jobs:
       - print_id
